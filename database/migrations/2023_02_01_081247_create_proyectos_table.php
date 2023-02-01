@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('github_link');
-            $table->string('link')->unique();
+            $table->string('link');
             $table->string('image');
             $table->text('technologies')->nullable();
             $table->timestamp('last_used_at')->nullable();

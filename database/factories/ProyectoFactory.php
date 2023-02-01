@@ -17,7 +17,19 @@ class ProyectoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => fake()->name(),
+          
+           // 'description' => fake()->description(),  
+           // 'github_link' => fake()->github_link(),
+           // 'link' => fake()->link(),
+           // 'image' => fake()->image(),
+            //'technologies' => fake()->technologies(), 
         ];
     }
+    public function unverified()
+    {
+        return $this->state(fn (array $attributes) => [
+            'email_verified_at' => null,
+        ]);
+    } 
 }
