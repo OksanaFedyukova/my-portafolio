@@ -25,25 +25,25 @@ class ProyectoController extends Controller
      */
     public function store(Request $request)
     {
-        $persona = new Proyecto();
-
+        $proyecto = new Proyecto();
 
         $request->validate([
             'name'=>'required', 
             'description'=> 'required',
             'github_link' =>'required', 
             'link' => 'required',
-            'technologies'=> 'required',
             'image'=> 'required',
+            'technologies'=> 'required',
+            
         ]);
 
  
 
         $proyecto->name = $request->name;
         $proyecto->description = $request->description;
-        $proyecot->github_link = $request->github_link;
+        $proyecto->github_link = $request->github_link;
         $proyecto->link= $request->link;
-        $proeycto->image = $request->image;
+        $proyecto->image = $request->image;
         $proyecto->technologies = $request->technologies;
 
         $proyecto->save();
@@ -71,13 +71,13 @@ class ProyectoController extends Controller
      */
     public function update(Request $request, Proyecto $proyecto)
     {
-        $request->validate([ 
+           $request->validate([ 
             'name'=>'required', 
             'description'=> 'required',
-             'github_link' =>'required', 
-             'link' => 'required',
-              'technologies'=> 'required',
-              'image'=> 'required',
+            'github_link' =>'required', 
+            'link' => 'required',
+            'technologies'=> 'required',
+            'image'=> 'required',
             ]);
             
         $proyecto->name = $request->name;
