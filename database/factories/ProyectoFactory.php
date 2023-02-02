@@ -18,12 +18,11 @@ class ProyectoFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-          
-            'description' => fake()->description(),  
-           'github_link' => fake()->github_link(),
-            'link' => fake()->link(),
+            'description' => fake()->text($maxNbChars = 50),  
+            'github_link' => fake()->imageUrl(),
+            'link' => fake()->text($maxNbChars = 50),
             'image' => fake()->image(),
-            'technologies' => fake()->technologies(), 
+            'technologies' => fake()->text($maxNbChars = 50), 
         ];
     }
     public function unverified()

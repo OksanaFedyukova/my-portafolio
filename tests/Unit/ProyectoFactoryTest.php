@@ -23,7 +23,7 @@ class ProyectoFactoryTest extends TestCase
 
         $this->assertInstanceOf(Proyecto::class, $proyecto);
         $this->assertIsString($proyecto->name);
-       // $this->assertIsString($proyecto->description);
+        $this->assertIsString($proyecto->description);
         $this->assertIsString($proyecto->github_link);
         $this->assertIsString($proyecto->link);
         $this->assertIsString($proyecto->image);

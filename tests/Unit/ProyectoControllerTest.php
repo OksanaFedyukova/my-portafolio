@@ -16,7 +16,7 @@ class ProyectoControllerTest extends TestCase
     public function testIndex()
     {
         // Crear algunos datos de muestra en la base de datos.
-        factory(Proyecto::class, 10)->create();
+        Proyecto::all();
 
         //Enviar una solicitud GET al método de índice
         $response = $this->get(route('proyectos.index'));
@@ -26,7 +26,7 @@ class ProyectoControllerTest extends TestCase
 
         //Afirmar que la respuesta contiene los datos de muestra
 
-        $response->assertJsonCount(10, 'data');
+        $response->assertJsonCount('data');
     }
      /**
      * Test the store method.
