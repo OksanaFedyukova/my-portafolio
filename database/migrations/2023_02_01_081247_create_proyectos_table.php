@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('github_link');
             $table->string('link');
             $table->string('image');
-            $table->text('technologies')->nullable();
+           $table->text('technologies')->nullable();
             $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
         });
