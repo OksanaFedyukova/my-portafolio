@@ -25,7 +25,7 @@ class CertificacionController extends Controller
      */
     public function store(Request $request)
     { 
-        $certification = new Certificate();
+        $certificacion = new Certificacion();
 
         $request->validate([
             'imgCertificate' => 'required',
