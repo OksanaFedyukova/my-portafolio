@@ -1,9 +1,10 @@
 <?php
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
 
-class CreateCertificacionesTable extends Migration
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +15,11 @@ class CreateCertificacionesTable extends Migration
     {
         Schema::create('certificaciones', function (Blueprint $table) {
             $table->id();
-            $table->string('imgCertificate');
             $table->string('title');
-            $table->string('school');
             $table->text('description');
+            $table->string('school');
+            $table->string('imgCertificate');
+            $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
         });
     }
@@ -31,5 +33,4 @@ class CreateCertificacionesTable extends Migration
     {
         Schema::dropIfExists('certificaciones');
     }
-}
-
+};
